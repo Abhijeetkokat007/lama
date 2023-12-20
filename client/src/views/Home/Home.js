@@ -30,11 +30,12 @@ function Home() {
 
   }
 
-  useEffect(() => {
-loaddata()
-  }, [])
+//   useEffect(() => {
+// loaddata()
+//   }, [])
   return (
     <>
+      <h1 className='project-name m-5'>LAMA</h1>
     <h1 className='colour-purple '>
       Create a New Project
     </h1>

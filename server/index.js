@@ -4,10 +4,13 @@ import dotenv from "dotenv";
 import Signup from "./models/userSignup.js";
 import Project from "./models/project.js";
 import Upload from "./models/upload.js";
+import path from "path";
+
 dotenv.config()
 
 const app = express();
 app.use(express.json());
+const __dirname = path.resolve();
 
 
 const PORT = process.env.PORT || 5000
@@ -99,6 +102,24 @@ app.post("/api/addprojrct", async (req, res) =>{
         })
     }
 } )
+app.get("/api/all/project", async (req, res) => {
+    
+   try{
+    const order1 = await Project.find()
+  
+    res.json({
+      success:true,
+      data:order1,
+      message: "all Transaction fatch  successfully"
+    });
+   }
+   catch(e){
+    res.json({
+        success:false,
+        message: e.message
+      });
+   }
+})
 
 app.get("/api/user/project/:id", async (req, res) => {
     const {id} = req.params;
@@ -230,6 +251,15 @@ app.put("/api/productedit/link/:id", async  (req, res) => {
       });
     }
 })
+
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(__dirname, '..', 'client', 'build'))); 
+   
+    app.get('*', (req, res) => {
+     res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
+    });
+   }
+
 
 app.listen(PORT, () => {
     console.log(`server is runing ${PORT}`)

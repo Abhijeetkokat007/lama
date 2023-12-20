@@ -8,15 +8,21 @@ import WidgetConfiguration from './views/WidgetConfiguration/WidgetConfiguration
 import Deployment from './views/Deployment/Deployment';
 import Pricing from './views/Pricing/Pricing';
 // import PopupHome from './component/popuphome';
+import AllProject from './views/AllProject/AllProject';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter([
     
   
-  // {
-  //     path: '/',
-  //     element: <PopupHome/>
-  // },
+  {
+      path: '/allproject',
+      element: <AllProject/>
+  },
+  {
+    path: '/upload/:id',
+    element: <AllProject/>
+},
   {
     path: '/',
     element: <Home/>
