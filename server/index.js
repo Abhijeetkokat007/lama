@@ -78,10 +78,10 @@ app.post("/api/login", async (req, res) => {
 })
 
 app.post("/api/addprojrct", async (req, res) =>{
-    const { user,  projectname } = req.body;
+    const {  projectname } = req.body;
 
     const projectobj = new Project({
-        user,
+        
         projectname
     })
 

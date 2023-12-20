@@ -7,16 +7,20 @@ import Home from './views/Home/Home';
 import WidgetConfiguration from './views/WidgetConfiguration/WidgetConfiguration';
 import Deployment from './views/Deployment/Deployment';
 import Pricing from './views/Pricing/Pricing';
-
+// import PopupHome from './component/popuphome';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter([
     
   
+  // {
+  //     path: '/',
+  //     element: <PopupHome/>
+  // },
   {
-      path: '/',
-      element: <Home/>
-  },
+    path: '/',
+    element: <Home/>
+},
   {
     path: '/widgetconfiguration',
     element: <WidgetConfiguration/>
