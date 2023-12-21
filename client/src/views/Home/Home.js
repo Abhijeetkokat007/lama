@@ -22,6 +22,7 @@ function Home() {
   const response = await axios.post("/api/addprojrct" , data )
    if(response?.data?.success){
  setVisible(false)
+ window.location.href = "/allproject";
 }
 
     alert(response?.data?.message)
@@ -72,7 +73,7 @@ function Home() {
           setProjectname(e.target.value)
          }}
          />
-{projectname}
+
         <br/><br/><br/>
        <p className='text-right'>
        <button className='ms-6 text-red-500' onClick={ ()=>{ setVisible(false)}}>Cancle</button>

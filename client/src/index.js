@@ -9,6 +9,7 @@ import Deployment from './views/Deployment/Deployment';
 import Pricing from './views/Pricing/Pricing';
 // import PopupHome from './component/popuphome';
 import AllProject from './views/AllProject/AllProject';
+import Upload from './views/Upload/Upload';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/upload/:id',
-    element: <AllProject/>
+    element: <Upload/>
 },
   {
     path: '/',
